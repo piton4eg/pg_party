@@ -23,7 +23,7 @@ RSpec.describe PgParty::Model::Methods do
       subject { model.range_partition_by(key) }
 
       it "initializes injector with model and key" do
-        expect(PgParty::ModelInjector).to receive(:new).with(model, key)
+        expect(PgParty::ModelInjector).to receive(:new).with(model, key, nil)
         subject
       end
 
@@ -55,7 +55,7 @@ RSpec.describe PgParty::Model::Methods do
       subject { model.list_partition_by(key) }
 
       it "initializes injector with model and key" do
-        expect(PgParty::ModelInjector).to receive(:new).with(model, key)
+        expect(PgParty::ModelInjector).to receive(:new).with(model, key, nil)
         subject
       end
 

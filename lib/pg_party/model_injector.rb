@@ -2,9 +2,10 @@
 
 module PgParty
   class ModelInjector
-    def initialize(model, key)
+    def initialize(model, *key)
       @model = model
-      @key = key
+      @key = key.flatten.compact
+      @key = @key.first if @key.size == 1
     end
 
     def inject_range_methods
